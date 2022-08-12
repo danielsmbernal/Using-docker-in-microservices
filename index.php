@@ -15,10 +15,8 @@ echo 'Versao Atual do PHP: ' . phpversion() . '<br>';
 
 $servername = "54.166.227.129";
 $username = "root";
-$password = "Senha123";
-$database = "meubanco";
-
-// Criar conexão
+$password = "Pass123";
+$database = "my_database";
 
 
 $link = new mysqli($servername, $username, $password, $database);
@@ -29,12 +27,12 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$valor_rand1 =  rand(1, 999);
-$valor_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
+$value_rand1 =  rand(1, 999);
+$value_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
 $host_name = gethostname();
 
 
-$query = "INSERT INTO dados (AlunoID, Nome, Sobrenome, Endereco, Cidade, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand2', '$valor_rand2', '$valor_rand2','$host_name')";
+$query = "INSERT INTO data (StudentID, Name, Surname, Adress, City, Host) VALUES ('$value_rand1' , '$value_rand2', '$value_rand2', '$value_rand2', '$value_rand2','$host_name')";
 
 
 if ($link->query($query) === TRUE) {
